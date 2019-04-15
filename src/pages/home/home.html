@@ -1,0 +1,116 @@
+<!-- <ion-header>
+  <ion-navbar>
+    <ion-title>
+      Ionic Blank
+    </ion-title>
+  </ion-navbar>
+</ion-header> -->
+
+<ion-content padding>
+  <div class="logoContainer">
+    <img src="../../assets/imgs/impress_job_logo.png">
+  </div>
+  
+  <div class="formContainer">
+    <h1>{{formStep}}/2</h1>
+    <h6>Datos Personales</h6>
+    <ion-slides #formSlider >
+
+      <ion-slide >
+        <ion-grid>
+          <ion-row>
+            <ion-col col-8 offset-2>
+              <ion-item class="formItem">
+                <ion-label stacked>Nombre</ion-label>
+                <ion-input type="text" placeholder="Nombre" [(ngModel)]="userData.name"></ion-input>
+              </ion-item>
+              <ion-item class="formItem">
+                <ion-label stacked>Apellido</ion-label>
+                <ion-input type="text" placeholder="Apellido" [(ngModel)]="userData.lastname"></ion-input>
+              </ion-item>
+              <ion-item class="formItem">
+                <ion-label stacked>Género</ion-label>
+                <ion-select placeholder="Seleccione" [(ngModel)]="userData.gender">
+                  <ion-option value="nes">Femenino</ion-option>
+                  <ion-option value="n64">Masculino</ion-option>
+                </ion-select>
+              </ion-item>
+              <ion-item class="formItem">
+                <ion-label stacked>Fecha Nacimiento</ion-label>
+                <ion-datetime displayFormat="DD/MM/YYYY" [(ngModel)]="userData.birthday"></ion-datetime>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-slide>
+    
+      <ion-slide>
+        <ion-grid>
+          <ion-row>
+            <ion-col col-6>
+              <ion-item class="formItem">
+                <ion-label stacked>País</ion-label>
+                <ion-select placeholder="Seleccione" [(ngModel)]="userData.country">
+                  <ion-option value="nes">Pais 1</ion-option>
+                  <ion-option value="n64">Pais 2</ion-option>
+                </ion-select>
+              </ion-item>
+            </ion-col>
+            <ion-col col-6>
+              <ion-item class="formItem">
+                <ion-label stacked>Edo. / Prov. / Dpto.</ion-label>
+                <ion-select placeholder="Seleccione" [(ngModel)]="userData.state">
+                  <ion-option value="nes">Estado 1</ion-option>
+                  <ion-option value="n64">Estado 2</ion-option>
+                </ion-select>
+              </ion-item>
+            </ion-col>
+            <ion-col col-8 offset-2>
+              <ion-item class="formItem">
+                <ion-label stacked>Ciudad</ion-label>
+                <ion-select placeholder="Seleccione" [(ngModel)]="userData.city">
+                  <ion-option value="nes">Ciudad 1</ion-option>
+                  <ion-option value="n64">Ciudad 2</ion-option>
+                </ion-select>
+              </ion-item>
+            </ion-col>
+            <ion-col col-12>
+              <ion-item class="formItem">
+                <ion-label stacked>Dirección</ion-label>
+                <ion-input type="text" placeholder="Dirección" [(ngModel)]="userData.direction"></ion-input>
+              </ion-item>
+            </ion-col>
+            <ion-col col-5>
+              <ion-row>
+                <ion-col class="insideCol" col-10 offset-2>
+                    <ion-item class="formItem insideItem">
+                      <ion-label stacked>Cod. de País</ion-label>
+                      <ion-select placeholder="Seleccione" [(ngModel)]="userData.countryCode">
+                        <ion-option value="nes">+1</ion-option>
+                        <ion-option value="n64">+2</ion-option>
+                      </ion-select>
+                    </ion-item>
+                  </ion-col>
+              </ion-row>
+            </ion-col>
+            <ion-col col-6 offset-1>
+              <ion-item class="formItem">
+                <ion-label stacked>Teléfono</ion-label>
+                <ion-input type="text" placeholder="Teléfono" [(ngModel)]="userData.phone"></ion-input>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-slide>
+      
+    </ion-slides>
+
+    <ion-footer no-shadow no-border>
+      <ion-toolbar position="bottom">
+        <button class="formBtn" ion-button full (click)="btnController()">{{this.formStep==1 ? 'Siguiente' : 'Continuar'}}</button>
+      </ion-toolbar>
+    </ion-footer>
+
+  
+  </div>
+</ion-content>
